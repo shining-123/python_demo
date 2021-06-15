@@ -105,32 +105,33 @@ def get_next_url_for_num(url, num):
     return numUrl
 
 
-# file_handle = open('D:\昆仑小师兄.txt', mode='w')
+file_handle = open('D:\昆仑小师兄.txt', mode='w')
 url = 'http://book.zongheng.com/chapter/967301/60491429.html'
 
-# i = 1
-# while (i < 4):
-#     # 章节标题
-#     title = get_title(url)
-#     print(title[0].get_text())
-#     file_handle.write(title[0].get_text() + '\n')
-#
-#     # 章节内容
-#     content = get_content(url)
-#     for p in content:
-#         print(p.get_text())
-#         file_handle.write(p.get_text() + '\n')
-#     # 换行
-#     file_handle.write('\n')
-#
-#     nextLabel = get_alabel(url)
-#     url = get_next_url(nextLabel)
-#     i = i + 1
-#     print(url)
-#
-#     # 休息3秒
-#     time.sleep(3)
-#
-#     file_handle.close()
+i = 1
+while (i < 4):
+    # 章节标题
+    title = get_title(url)
+    print(title[0].get_text())
+    file_handle.write(title[0].get_text() + '\n')
 
-print(get_next_url_for_num(url, 2))
+    # 章节内容
+    content = get_content(url)
+    for p in content:
+        print(p.get_text())
+        file_handle.write(p.get_text() + '\n')
+    # 换行
+    file_handle.write('\n')
+
+    nextLabel = get_alabel(url)
+    url = get_next_url(nextLabel)
+    i = i + 1
+    print(url)
+    # 休息3秒
+    time.sleep(3)
+else:
+    # 关闭文件
+    file_handle.close()
+    print('file download is finished...')
+
+# print(get_next_url_for_num(url, 2))
